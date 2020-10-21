@@ -1,0 +1,29 @@
+{
+  "name": "GuyChecker",
+  "version": "1.0.0.1",
+  "permissions": [
+    "http://127.0.0.1:5000/boot2",
+    "activeTab",
+
+
+    "https://tinder.com/app/matches"
+
+  ],
+  "description": "Build an Extension!",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches":["https://tinder.com/app/messages/*"],
+      "run_at": "document_end",
+      "js": ["content.js"]
+
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
